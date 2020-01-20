@@ -19,23 +19,30 @@ class SalaryApp extends StatelessWidget {
     @override
     Widget build(BuildContext ctx){
       return Scaffold(
-          body:new Container(
-            child: new Center(
+          body: new Center(
+            child:new Container(
               child: new Column(
                   mainAxisAlignment:MainAxisAlignment.center,
                   children:<Widget>[
-                    new FlatButton(
+                    new Container(
+                      padding: const EdgeInsets.only(top:300,bottom:20.0 ),
+                      child:new FlatButton(
                         onPressed: (){
-                        Navigator.push(ctx, PageTwo());
-                     },
-                     child: Image.asset('assets/images/Group.png')
-                      ),
-                    new Image.asset('assets/images/image.png')
+                          Navigator.push(ctx, PageTwo());
+                        },
+                        child: Image.asset('assets/images/Group.png')
+                    ),
+                  ),
+                    Container(
+                      padding: const EdgeInsets.only(top:200, bottom: 47.0),
+                      child: Image.asset('assets/images/image.png'),
+                    ),
 
-                  ]
-              ),
+
+            ]
             ),
-          ),
+            ),
+        ),
       );
     }
 }
