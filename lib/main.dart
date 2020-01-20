@@ -19,14 +19,23 @@ class SalaryApp extends StatelessWidget {
     @override
     Widget build(BuildContext ctx){
       return Scaffold(
-        body: Center(
-          child: FlatButton(
-            onPressed: (){
-              Navigator.push(ctx, PageTwo());
-            },
-            child: Image.asset('assets/images/Group.jpg')
-          )
-        ),
+          body:new Container(
+            child: new Center(
+              child: new Column(
+                  mainAxisAlignment:MainAxisAlignment.center,
+                  children:<Widget>[
+                    new FlatButton(
+                        onPressed: (){
+                        Navigator.push(ctx, PageTwo());
+                     },
+                     child: Image.asset('assets/images/Group.png')
+                      ),
+                    new Image.asset('assets/images/image.png')
+
+                  ]
+              ),
+            ),
+          ),
       );
     }
 }
@@ -70,12 +79,51 @@ class PageThree extends MaterialPageRoute<Null> {
       body: Center(
         child: MaterialButton(
           onPressed: () {
-            Navigator.popUntil(
-                ctx, ModalRoute.withName(Navigator.defaultRouteName));
+            Navigator.push(ctx, PageFour());
           },
           child: Text("Register!"),
         ),
       ),
+    );
+  });
+}
+
+class PageFour extends MaterialPageRoute<Null>{
+  PageFour() :super(builder: (BuildContext ctx) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme
+            .of(ctx)
+            .accentColor,
+        elevation: 2.0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () {
+              Navigator.pop(ctx);
+            },
+          )
+        ],
+      ),
+      body:new Container(
+          child: new Center(
+            child: new Column(
+              mainAxisAlignment:MainAxisAlignment.center,
+              children:<Widget>[
+                new TextField(
+                  decoration: new InputDecoration(
+                    hintText: "Hey Larin Chyhka"
+                  ),
+
+                  ),
+                  new Text("")
+
+              ]
+            ),
+          ),
+      )
+
+
     );
   });
 }
