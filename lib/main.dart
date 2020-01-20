@@ -24,8 +24,8 @@ class SalaryApp extends StatelessWidget {
             onPressed: (){
               Navigator.push(ctx, PageTwo());
             },
-            child: Image.asset('assets/images/Group.jpg')
-          )
+            child: Image.asset('assets/images/logo.png'),
+          ),
         ),
       );
     }
