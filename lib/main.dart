@@ -203,11 +203,18 @@ class PageFour extends MaterialPageRoute<Null>{
 
                     ]
                 ),
-                new Container(
-                    child: FlatButton(
-                      child: Text('Saved',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0)),
+                new Row(
+                  children: <Widget>[
+                    new Container(
+                      child: FlatButton(
+                        child: Text('Saved',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20.0, color: Color.fromRGBO(255, 112, 82, 1))),
+                         shape: RoundedRectangleBorder(
+                    side: BorderSide(color: Color.fromRGBO(255, 112, 82, 1),width: 2),
+                    borderRadius: BorderRadius.circular(23)),
                     ),
-                ),
+                  ),
+                ]
+                )
               ]
       )
 
