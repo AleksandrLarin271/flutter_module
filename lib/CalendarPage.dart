@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
+//import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:flutter_module/FourthPage.dart';
 
 class CalendarPage extends MaterialPageRoute<Null>{
@@ -8,7 +8,7 @@ class CalendarPage extends MaterialPageRoute<Null>{
         body: Column(
           children: <Widget>[
             Container(
-                width: Device.width,
+                //width: Device.width,
               padding: const EdgeInsets.only(top: 30, left: 10),
               child:Row(
                 children: <Widget>[
@@ -32,8 +32,8 @@ class CalendarPage extends MaterialPageRoute<Null>{
             )
             ),
             Container(
-              width: Device.screenWidth,
-              height: Device.screenHeight-100,
+              //width: Device.screenWidth,
+              //height: Device.screenHeight-100,
               padding: const EdgeInsets.only(top: 20),
               child:   GridView.count(
               crossAxisCount: 7,
@@ -43,7 +43,7 @@ class CalendarPage extends MaterialPageRoute<Null>{
                             //weekday
                             Container(
                               color: hexToColor("#4A98F7"),
-                             width: Device.screenWidth/7,
+                             //width: Device.screenWidth/7,
                              child: Center(child:Text("Pzt")),
                              padding: const EdgeInsets.only(left: 10),
 
@@ -51,37 +51,37 @@ class CalendarPage extends MaterialPageRoute<Null>{
                             Container(
                               color: hexToColor("#4A98F7"),
 
-                              width: Device.screenWidth/7,
+                              //width: Device.screenWidth/7,
                               child: Center(child:Text("Sal")),
                             ),
                             Container(
                               color: hexToColor("#4A98F7"),
 
-                              width: Device.screenWidth/7,
+                              //width: Device.screenWidth/7,
                               child: Center(child:Text("Çrb")),
                             ),
                             Container(
                               color: hexToColor("#4A98F7"),
 
-                              width: Device.screenWidth/7,
+                              //width: Device.screenWidth/7,
                               child: Center(child:Text("Prş")),
                             ),
                             Container(
                               color: hexToColor("#4A98F7"),
 
-                              width: Device.screenWidth/7,
+                              //width: Device.screenWidth/7,
                               child: Center(child:Text("Cum")),
                             ),
                             Container(
                               color: hexToColor("#4A98F7"),
 
-                              width: Device.screenWidth/7,
+                              //width: Device.screenWidth/7,
                               child:Center(child: Text("Cmt")),
                             ),
                             Container(
                               color: hexToColor("#4A98F7"),
 
-                              width: Device.screenWidth/7,
+                              //width: Device.screenWidth/7,
                               child: Center(child:Text("Pzr")),
                             ),
                             //month days
