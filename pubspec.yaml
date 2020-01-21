@@ -29,7 +29,8 @@ dependencies:
   cupertino_icons: ^0.1.2
   firebase_auth: ^0.14.0+5
   cloud_firestore: ^0.12.9+4
-
+  flutter_device_type: 0.2.0
+  flutter_calendar_carousel: 1.4.10
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -47,6 +48,12 @@ flutter:
     - assets/images/Group.png
     - assets/images/image.png
     - assets/images/back.png
+    - assets/images/stats.png
+    - assets/images/settings.png
+    - assets/images/Bitmap.png
+    - assets/images/Bitmap2.png
+    - assets/images/Bitmap3.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

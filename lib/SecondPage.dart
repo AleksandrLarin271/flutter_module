@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module/FourthPage.dart';
 
 import 'ThreePage.dart';
 
@@ -76,7 +77,10 @@ class PageTwo extends MaterialPageRoute<Null> {
                   child: FlatButton(
                     padding: EdgeInsets.only(left: 110.0, top: 25.0),
                     child: Text('Forget password?', style: TextStyle(decoration: TextDecoration.underline, fontSize: 16.0, fontFamily: 'Robotico', color:Color.fromRGBO(117, 64, 238, 1))),
-                  )
+
+                  onPressed: (){
+                      Navigator.push(ctx, PageFour());
+                  },)
               )
             ],
           ),

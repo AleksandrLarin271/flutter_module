@@ -399,14 +399,6 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
-    <string name="default_web_client_id" translatable="false">875120442061-htdarqht19ltjbta0h69m87kcb81h1tm.apps.googleusercontent.com</string>
-    <string name="firebase_database_url" translatable="false">https://salaryapp-7dcae.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">875120442061</string>
-    <string name="google_api_key" translatable="false">AIzaSyDJ88GiFOALjkt9QSxJ0rm5DwHs1hF1hYU</string>
-    <string name="google_app_id" translatable="false">1:875120442061:android:3e954df4a378a2393b4784</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDJ88GiFOALjkt9QSxJ0rm5DwHs1hF1hYU</string>
-    <string name="google_storage_bucket" translatable="false">salaryapp-7dcae.appspot.com</string>
-    <string name="project_id" translatable="false">salaryapp-7dcae</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

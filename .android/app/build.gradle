@@ -1,7 +1,6 @@
 def flutterPluginVersion = 'managed'
 
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -15,7 +14,6 @@ android {
         applicationId "salaryapp.flutter_module.host"
         minSdkVersion 16
         targetSdkVersion 28
-        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -36,7 +34,6 @@ android {
 buildDir = new File(rootProject.projectDir, "../build/host")
 dependencies {
     implementation project(':flutter')
-    implementation 'com.google.firebase:firebase-analytics:17.2.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
