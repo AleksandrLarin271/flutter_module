@@ -18,166 +18,88 @@
 16    <uses-permission android:name="android.permission.INTERNET" />
 16-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:9:5-66
 16-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:9:22-64
-17    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-18    <!-- <uses-sdk android:minSdkVersion="14" /> -->
-19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-19-->[com.google.firebase:firebase-firestore:21.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/aca4593e6d55a1d2063c0f6b146b0d8e/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:13:5-79
-19-->[com.google.firebase:firebase-firestore:21.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/aca4593e6d55a1d2063c0f6b146b0d8e/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:13:22-76
-20    <!--
-21 io.flutter.app.FlutterApplication is an android.app.Application that
-22         calls FlutterMain.startInitialization(this); in its onCreate method.
-23         In most cases you can leave this as-is, but you if you want to provide
-24         additional functionality it is fine to subclass or reimplement
-25         FlutterApplication and put your custom class here.
-26    -->
-27    <application
-27-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:16:5-44:19
-28        android:name="io.flutter.app.FlutterApplication"
-28-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:17:9-57
-29        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-29-->[androidx.core:core:1.0.1] /home/kolia/.gradle/caches/transforms-2/files-2.1/d6f8e38bb2369ae47342a66a61de6ea9/core-1.0.1/AndroidManifest.xml:22:18-86
-30        android:debuggable="true"
-31        android:icon="@mipmap/ic_launcher"
-31-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:19:9-43
-32        android:label="flutter_module" >
-32-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:18:9-39
-33        <activity
-33-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:20:9-38:20
-34            android:name="salaryapp.flutter_module.host.MainActivity"
-34-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:21:13-41
-35            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-35-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:24:13-163
-36            android:hardwareAccelerated="true"
-36-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:25:13-47
-37            android:launchMode="singleTop"
-37-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:22:13-43
-38            android:theme="@style/LaunchTheme"
-38-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:23:13-47
-39            android:windowSoftInputMode="adjustResize" >
-39-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:26:13-55
-40
-41            <!--
-42                 This keeps the window background of the activity showing
-43                 until Flutter renders its first frame. It can be removed if
-44                 there is no splash screen (such as the default splash screen
-45                 defined in @style/LaunchTheme).
-46            -->
-47            <meta-data
-47-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:31:13-33:40
-48                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
-48-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:32:17-82
-49                android:value="true" />
-49-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:33:17-37
+17    <!--
+18     io.flutter.app.FlutterApplication is an android.app.Application that
+19         calls FlutterMain.startInitialization(this); in its onCreate method.
+20         In most cases you can leave this as-is, but you if you want to provide
+21         additional functionality it is fine to subclass or reimplement
+22         FlutterApplication and put your custom class here.
+23    -->
+24    <application
+24-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:16:5-44:19
+25        android:name="io.flutter.app.FlutterApplication"
+25-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:17:9-57
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.0.1] /home/kolia/.gradle/caches/transforms-2/files-2.1/d6f8e38bb2369ae47342a66a61de6ea9/core-1.0.1/AndroidManifest.xml:22:18-86
+27        android:debuggable="true"
+28        android:icon="@mipmap/ic_launcher"
+28-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:19:9-43
+29        android:label="flutter_module" >
+29-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:18:9-39
+30        <activity
+30-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:20:9-38:20
+31            android:name="salaryapp.flutter_module.host.MainActivity"
+31-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:21:13-41
+32            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+32-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:24:13-163
+33            android:hardwareAccelerated="true"
+33-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:25:13-47
+34            android:launchMode="singleTop"
+34-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:22:13-43
+35            android:theme="@style/LaunchTheme"
+35-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:23:13-47
+36            android:windowSoftInputMode="adjustResize" >
+36-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:26:13-55
+37
+38            <!--
+39                 This keeps the window background of the activity showing
+40                 until Flutter renders its first frame. It can be removed if
+41                 there is no splash screen (such as the default splash screen
+42                 defined in @style/LaunchTheme).
+43            -->
+44            <meta-data
+44-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:31:13-33:40
+45                android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
+45-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:32:17-82
+46                android:value="true" />
+46-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:33:17-37
+47
+48            <intent-filter>
+48-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:34:13-37:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:35:17-68
+49-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:35:25-66
 50
-51            <intent-filter>
-51-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:34:13-37:29
-52                <action android:name="android.intent.action.MAIN" />
-52-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:35:17-68
-52-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:35:25-66
-53
-54                <category android:name="android.intent.category.LAUNCHER" />
-54-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:36:17-76
-54-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:36:27-74
-55            </intent-filter>
-56        </activity>
-57        <!--
-58             Don't delete the meta-data below.
-59             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-60        -->
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:36:17-76
+51-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:36:27-74
+52            </intent-filter>
+53        </activity>
+54        <!--
+55             Don't delete the meta-data below.
+56             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+57        -->
+58        <meta-data
+58-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:41:9-43:33
+59            android:name="flutterEmbedding"
+59-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:42:13-44
+60            android:value="2" />
+60-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:43:13-30
 61        <meta-data
-61-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:41:9-43:33
-62            android:name="flutterEmbedding"
-62-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:42:13-44
-63            android:value="2" />
-63-->/home/kolia/AndroidStudioProjects/flutter_ap/.android/app/src/main/AndroidManifest.xml:43:13-30
-64        <meta-data
-64-->[:flutter] /home/kolia/AndroidStudioProjects/flutter_ap/.android/Flutter/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:38
-65            android:name="flutterProjectType"
-65-->[:flutter] /home/kolia/AndroidStudioProjects/flutter_ap/.android/Flutter/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-46
-66            android:value="module" />
-66-->[:flutter] /home/kolia/AndroidStudioProjects/flutter_ap/.android/Flutter/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-35
-67
-68        <service
-68-->[:firebase_auth] /home/kolia/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+9/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
-69            android:name="com.google.firebase.components.ComponentDiscoveryService"
-69-->[:firebase_auth] /home/kolia/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+9/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
-70            android:directBootAware="true"
-70-->[com.google.firebase:firebase-common:19.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/5252e706048a3a1ef9f5f51ab4a9454a/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
-71            android:exported="false" >
-71-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:35:13-37
-72            <meta-data
-72-->[:firebase_auth] /home/kolia/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+9/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-73                android:name="com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar"
-73-->[:firebase_auth] /home/kolia/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+9/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-122
-74                android:value="com.google.firebase.components.ComponentRegistrar" />
-74-->[:firebase_auth] /home/kolia/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+9/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
-75            <meta-data
-75-->[:cloud_firestore] /home/kolia/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.12.11/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-76                android:name="com.google.firebase.components:io.flutter.plugins.firebase.cloudfirestore.FlutterFirebaseAppRegistrar"
-76-->[:cloud_firestore] /home/kolia/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.12.11/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-133
-77                android:value="com.google.firebase.components.ComponentRegistrar" />
-77-->[:cloud_firestore] /home/kolia/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.12.11/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
-78            <meta-data
-78-->[:firebase_core] /home/kolia/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.3+2/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
-79                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseAppRegistrar"
-79-->[:firebase_core] /home/kolia/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.3+2/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-123
-80                android:value="com.google.firebase.components.ComponentRegistrar" />
-80-->[:firebase_core] /home/kolia/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.3+2/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
-81            <meta-data
-81-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:36:13-38:85
-82                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-82-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:37:17-109
-83                android:value="com.google.firebase.components.ComponentRegistrar" />
-83-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:38:17-82
-84            <meta-data
-84-->[com.google.firebase:firebase-firestore:21.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/aca4593e6d55a1d2063c0f6b146b0d8e/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:20:13-22:85
-85                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-85-->[com.google.firebase:firebase-firestore:21.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/aca4593e6d55a1d2063c0f6b146b0d8e/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:21:17-111
-86                android:value="com.google.firebase.components.ComponentRegistrar" />
-86-->[com.google.firebase:firebase-firestore:21.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/aca4593e6d55a1d2063c0f6b146b0d8e/jetified-firebase-firestore-21.3.0/AndroidManifest.xml:22:17-82
-87        </service>
-88
-89        <activity
-89-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:24:9-31:50
-90            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-90-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:25:13-85
-91            android:excludeFromRecents="true"
-91-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:26:13-46
-92            android:exported="true"
-92-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:27:13-36
-93            android:launchMode="singleTask"
-93-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:28:13-44
-94            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-94-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:29:13-102
-95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-95-->[com.google.firebase:firebase-auth:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2bf3dd0ad771c5ded139de555c2e7193/jetified-firebase-auth-17.0.0/AndroidManifest.xml:30:13-72
-96
-97        <provider
-97-->[com.google.firebase:firebase-common:19.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/5252e706048a3a1ef9f5f51ab4a9454a/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
-98            android:name="com.google.firebase.provider.FirebaseInitProvider"
-98-->[com.google.firebase:firebase-common:19.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/5252e706048a3a1ef9f5f51ab4a9454a/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
-99            android:authorities="salaryapp.flutter_module.host.firebaseinitprovider"
-99-->[com.google.firebase:firebase-common:19.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/5252e706048a3a1ef9f5f51ab4a9454a/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
-100            android:exported="false"
-100-->[com.google.firebase:firebase-common:19.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/5252e706048a3a1ef9f5f51ab4a9454a/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
-101            android:initOrder="100" />
-101-->[com.google.firebase:firebase-common:19.3.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/5252e706048a3a1ef9f5f51ab4a9454a/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
-102
-103        <activity
-103-->[com.google.android.gms:play-services-base:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2f220e4626961757d61af53add94b7ee/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-104            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-104-->[com.google.android.gms:play-services-base:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2f220e4626961757d61af53add94b7ee/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-105            android:exported="false"
-105-->[com.google.android.gms:play-services-base:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2f220e4626961757d61af53add94b7ee/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-106            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-106-->[com.google.android.gms:play-services-base:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/2f220e4626961757d61af53add94b7ee/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-107
-108        <meta-data
-108-->[com.google.android.gms:play-services-basement:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/7df753530c640b0f964a8aa45d918618/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-109            android:name="com.google.android.gms.version"
-109-->[com.google.android.gms:play-services-basement:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/7df753530c640b0f964a8aa45d918618/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-110            android:value="@integer/google_play_services_version" />
-110-->[com.google.android.gms:play-services-basement:17.0.0] /home/kolia/.gradle/caches/transforms-2/files-2.1/7df753530c640b0f964a8aa45d918618/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-111    </application>
-112
-113</manifest>
+61-->[:flutter] /home/kolia/AndroidStudioProjects/flutter_ap/.android/Flutter/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:38
+62            android:name="flutterProjectType"
+62-->[:flutter] /home/kolia/AndroidStudioProjects/flutter_ap/.android/Flutter/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-46
+63            android:value="module" />
+63-->[:flutter] /home/kolia/AndroidStudioProjects/flutter_ap/.android/Flutter/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-35
+64
+65        <activity
+65-->[:url_launcher] /home/kolia/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.1/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+66            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+66-->[:url_launcher] /home/kolia/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.1/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+67            android:exported="false"
+67-->[:url_launcher] /home/kolia/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.1/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+68            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+68-->[:url_launcher] /home/kolia/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.1/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+69    </application>
+70
+71</manifest>

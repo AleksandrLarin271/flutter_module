@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_module/CalendarPage.dart';
 
+class FourPage extends StatefulWidget {
+
+  @override
+  State createState()=>_FourPageState();
+}
 
 
-class PageFour extends MaterialPageRoute<Null>{
-  PageFour() :super(builder: (BuildContext ctx) {
+class _FourPageState extends State<FourPage>{
+  _FourPageState() ;
+
+    @override
+    Widget build(BuildContext context) {
     return Scaffold(
 
         body: new Column(
@@ -35,7 +43,8 @@ class PageFour extends MaterialPageRoute<Null>{
                         hintText: "Job Name"
                     ),
 
-                  )),
+                  )
+              ),
               new Row(
                   children: <Widget>[
                     Container(
@@ -130,28 +139,28 @@ class PageFour extends MaterialPageRoute<Null>{
                       padding: const EdgeInsets.only(top :30, left : 20,right: 20),
 
                       child: FlatButton(
-                          color:hexToColor("#e3d9fc"),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(23)
-                          ),
+                        color:hexToColor("#e3d9fc"),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(23)
+                        ),
 
-                          child: Container(
-                              child:Row(children: <Widget>[
-                                Container(
-                                  width: 45,
-                                  padding: const EdgeInsets.only( left:0,right: 15),
-                                  child:Image.asset('assets/images/Bitmap3.png'),
-                                ),
-                                Text('manual entry',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 12,
-                                        color: hexToColor("#7540EE"))),
+                        child: Container(
+                            child:Row(children: <Widget>[
+                              Container(
+                                width: 45,
+                                padding: const EdgeInsets.only( left:0,right: 15),
+                                child:Image.asset('assets/images/Bitmap3.png'),
+                              ),
+                              Text('manual entry',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 12,
+                                      color: hexToColor("#7540EE"))),
 
 
-                              ],)
-                          ),
-                          onPressed: (){},
+                            ],)
+                        ),
+                        onPressed: (){},
                       ),
                     ),
                     Container (
@@ -179,7 +188,9 @@ class PageFour extends MaterialPageRoute<Null>{
                                 fontSize: 20.0,
                                 color: hexToColor("#FF7052"))),
                         onPressed: (){
-                          Navigator.push(ctx, CalendarPage());
+
+                          Navigator.of(context).push(new MaterialPageRoute(builder:
+                              (BuildContext context) => CalendarPage()));
                         },
                       ),
                     ),
@@ -191,7 +202,8 @@ class PageFour extends MaterialPageRoute<Null>{
 
 
     );
-  });
+  }
+
 }
 Color hexToColor(String code) {
   return new Color(int.parse(code.substring(1, 7), radix: 16) + 0xFF000000);

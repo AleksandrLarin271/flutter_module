@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'SecondPage.dart';
 //var authHandler = new Auth();
 class PageThree extends MaterialPageRoute<Null> {

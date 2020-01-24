@@ -1,10 +1,4 @@
-#Tue Jan 21 13:32:10 EET 2020
-path.2=classes3.dex
-path.1=classes2.dex
+#Fri Jan 24 09:06:47 EET 2020
+base.0=/home/kolia/AndroidStudioProjects/flutter_ap/build/host/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/home/aleksandr/AndroidStudioProjects/flutter_module/build/host/intermediates/dex/debug/mergeDexDebug/out/classes3.dex
-base.1=/home/aleksandr/AndroidStudioProjects/flutter_module/build/host/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
-base.0=/home/aleksandr/AndroidStudioProjects/flutter_module/build/host/intermediates/dex/debug/mergeDexDebug/out/classes.dex

@@ -79,7 +79,8 @@ class PageTwo extends MaterialPageRoute<Null> {
                     child: Text('Forget password?', style: TextStyle(decoration: TextDecoration.underline, fontSize: 16.0, fontFamily: 'Robotico', color:Color.fromRGBO(117, 64, 238, 1))),
 
                   onPressed: (){
-                      Navigator.push(ctx, PageFour());
+                    Navigator.of(ctx).push(new MaterialPageRoute(builder:
+                        (BuildContext context) =>FourPage()));
                   },)
               )
             ],
