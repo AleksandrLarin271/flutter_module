@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_module/CalendarPage.dart';
 import 'package:flutter_module/FourthPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -36,33 +37,129 @@ class _ResultPageState extends State<ResultPage> {
     List<Container> list_res=new List<Container>();
     _events.forEach((var key,var value){
       list_res.add(Container(
-        height: 30,
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.all(5),
+          height: 55,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [BoxShadow(
+              color: Colors.grey,
+              blurRadius: 20.0, // has the effect of softening the shadow
+              spreadRadius: 5.0, // has the effect of extending the shadow
+              offset: Offset(
+                10.0, // horizontal, move right 10
+                10.0, // vertical, move down 10
+              ),
+            )
+            ],
             borderRadius: BorderRadius.all(
                 Radius.circular(5)
             ),
-          boxShadow: [
-          new BoxShadow(
-          color: hexToColor("#e9e9ef"),
-          offset: new Offset(20.0, 10.0),
-              )
-           ]),
-        child: Center(
+          ),
+
           child:Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-                 Text(value.toString().split("{")[1].split("}")[0].split(",")[0].split(":")[1]),
-                 Text("2"),
-                 Text("3")
+                 Container(
+                   width: 80,
+                   height: 100,
+                   decoration: BoxDecoration(
+                     color: Colors.blue,
+                     borderRadius: BorderRadius.only(
+                         topLeft:Radius.circular(5),
+                         bottomLeft:Radius.circular(5)
+
+                     )
+                   ),
+                   child:Center(
+                     child:Text(
+                         value.toString()
+                             .split("{")[1]
+                             .split("}")[0]
+                             .split(",")[0]
+                             .split(":")[1],
+                       style:TextStyle(
+                           fontSize: 36,
+                           fontStyle: FontStyle.normal,
+                            color: Colors.white,
+                       )
+                     ),
+                   )
+                 ),
+                 Container(
+                   width: 240,
+                   margin: const EdgeInsets.only(top: 5,bottom: 5,left: 10,right: 10),
+                   child: Column(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     children: <Widget>[
+                          Text(value.toString()
+                              .split("{")[1]
+                              .split("}")[0]
+                              .split(",")[4]
+                              .split(":")[1].trim().split(" ")[0]
+                              //.split(" ")[0]
+                               ,
+                            style: TextStyle(
+                                      fontSize: 16
+                            ),
+                          ),
+                          Text(value.toString()
+                              .split("{")[1]
+                              .split("}")[0]
+                              .split(",")[3]
+                              .split(":")[1],
+                            style: TextStyle(
+                                color: hexToColor("#8A9199"),
+                                fontSize: 14
+                            ),
+                          )
+                       ],
+                    )
+                 ),
+                 Text("\$"+value.toString()
+                     .split("{")[1]
+                     .split("}")[0]
+                     .split(",")[2]
+                     .split(":")[1],
+                 style: TextStyle(
+                       fontSize: 16
+                   ),
+                 )
               ],
             ),
           )
-        )
+
       );
       print('${key}  ${value.toString()} ');
     });
     return list_res;
 
+  }
+  String getAllHours(){
+    int res=0;
+    _events.forEach((var key,var value) {
+      print(int.tryParse(value.toString()
+          .split("{")[1]
+          .split("}")[0]
+          .split(",")[0]
+          .split(":")[1]));
+      res+=(int.tryParse(value.toString()
+          .split("{")[1]
+          .split("}")[0]
+          .split(",")[0]
+          .split(":")[1]));
+    });
+
+    return res.toString();
+  }
+  String getAllMoney(){
+    int res=0;
+    _events.forEach((var key,var value) {
+      res+=(int.tryParse(value.toString()
+          .split("{")[1]
+          .split("}")[0]
+          .split(",")[2]
+          .split(":")[1]));
+    });
+    return res.toString();
   }
   @override
   Widget build(BuildContext context) {
@@ -73,25 +170,42 @@ class _ResultPageState extends State<ResultPage> {
                     Row(
                       children: <Widget>[
                         Container(
-                          padding: const EdgeInsets.only(top:20),
+                          margin: const EdgeInsets.only(top:20),
                           child:FlatButton(
                                 child: Image.asset("assets/images/arrow_back.png"),
                                 onPressed: (){
-
+                                  Navigator.of(context).
+                                  push(new MaterialPageRoute(
+                                      builder:(BuildContext context) =>CalendarPage()
+                                      )
+                                  );
                                 },
                             )
                         ),
                         Center(
                             child:Container(
+                              margin: const EdgeInsets.only(top:15),
                                 child:Text("Earnings",
-                                    style: TextStyle(fontSize: 20, fontStyle: FontStyle.normal,fontWeight: FontWeight.normal))
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontStyle: FontStyle.normal,
+                                        fontWeight: FontWeight.normal)
+                                )
                           )
                         )
                       ]
                     ),
                     Container(
-                      height: 158,
-                      child: Center(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                              Radius.circular(5)
+                          ),
+
+                      ),
+                      margin: const EdgeInsets.only(top:10,bottom: 20,left: 10,right: 10),
+                      height: 100,
+                      child: Container(
+                        decoration: BoxDecoration(color: Colors.white),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                          children: <Widget>[
@@ -106,15 +220,17 @@ class _ResultPageState extends State<ResultPage> {
                                         color:hexToColor("#6B7897")
                                     )
                                 ),
-                                Text(
-                                    "45",
+                                Container(
+                                    margin: const EdgeInsets.all(5),
+                                    child:Text(
+                                    getAllHours(),
                                     style: TextStyle(
                                         fontSize: 28,
                                         fontWeight: FontWeight.bold,
                                         fontStyle: FontStyle.normal,
                                         color:hexToColor("#FF7052")
                                     )
-                                ),
+                                )),
                                 Text(
                                     "son ay",
                                     style: TextStyle(
@@ -138,7 +254,7 @@ class _ResultPageState extends State<ResultPage> {
                                    )
                                ),
                                Text(
-                                   "\$450",
+                                   "\$"+getAllMoney(),
                                    style: TextStyle(
                                        fontSize: 40,
                                        fontWeight: FontWeight.normal,
@@ -169,6 +285,18 @@ class _ResultPageState extends State<ResultPage> {
                     )
                 ]
             )
+        ),
+        floatingActionButton: FloatingActionButton(
+
+          child: Icon(Icons.add),
+          onPressed: (){
+            print("CalculatorPage");
+            Navigator.of(context).push(new MaterialPageRoute(builder:
+                (BuildContext context) => CalendarPage()
+
+                )
+              );
+          },
         )
     );
 

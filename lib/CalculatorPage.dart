@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_module/CalendarPage.dart';
@@ -39,8 +38,6 @@ class _CalculatorPageState extends State<CalculatorPage>
 
   var hours;
   var minute;
-  var _daily_earnings;
-  var _note;
   var date;
   @override
   void initState(){
@@ -272,7 +269,7 @@ class _CalculatorPageState extends State<CalculatorPage>
                               fontSize: 20.0,
                               color: hexToColor("#FF7052"))),
                       onPressed: (){
-                        Work work=new Work(_controller_hours.text,_controller_minute.text, _controller_earning.text, _controller_message.text);
+                        Work work=new Work(_controller_hours.text,_controller_minute.text, _controller_earning.text, _controller_message.text,selected_day);
                         events_map[selected_day]=[work.toString()];
                         prefs.setString("events", json.encode((encodeMap(events_map))));
                         Navigator.of(context).

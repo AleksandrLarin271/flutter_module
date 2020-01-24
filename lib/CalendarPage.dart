@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_module/CalculatorPage.dart';
-import 'package:flutter_module/Work.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'dart:convert';
@@ -15,7 +14,7 @@ class CalendarPage extends StatefulWidget{
 
    CalendarPage();
    CalendarPage.events(this.events_map,this.prefs);
-
+   CalendarPage.prefs(this.prefs)
   @override
   State createState()=>_CalendarPageState.events(events_map,prefs);
 }
