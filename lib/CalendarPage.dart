@@ -5,6 +5,7 @@ import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_module/FourthPage.dart';
 
 import 'ResultPage.dart';
 
@@ -14,7 +15,7 @@ class CalendarPage extends StatefulWidget{
 
    CalendarPage();
    CalendarPage.events(this.events_map,this.prefs);
-   CalendarPage.prefs(this.prefs)
+   CalendarPage.prefs(this.prefs);
   @override
   State createState()=>_CalendarPageState.events(events_map,prefs);
 }
@@ -206,9 +207,95 @@ class _CalendarPageState extends State<CalendarPage>
                 calendarController: _controller,
               ),
               ..._selectedEvents.map((event) => ListTile(
-                title: Text(
-                      event.contains("Work")?convert(event.toString()):event.toString()
+                title: Container(
+                  margin: const EdgeInsets.all(5),
+                  height: 55,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 20.0, // has the effect of softening the shadow
+                      spreadRadius: 5.0, // has the effect of extending the shadow
+                      offset: Offset(
+                        10.0, // horizontal, move right 10
+                        10.0, // vertical, move down 10
+                      ),
+                    )
+                    ],
+                    borderRadius: BorderRadius.all(
+                        Radius.circular(5)
+                    ),
                   ),
+                  child:Row(
+                    children: <Widget>[
+                      Container(
+                          width: 80,
+                          height: 100,
+                          decoration: BoxDecoration(
+                              color: Colors.blue,
+                              borderRadius: BorderRadius.only(
+                                  topLeft:Radius.circular(5),
+                                  bottomLeft:Radius.circular(5)
+
+                              )
+                          ),
+                          child:Center(
+                            child:Text(
+                                event.toString()
+                                    .split("{")[1]
+                                    .split("}")[0]
+                                    .split(",")[0]
+                                    .split(":")[1],
+                                style:TextStyle(
+                                  fontSize: 36,
+                                  fontStyle: FontStyle.normal,
+                                  color: Colors.white,
+                                )
+                            ),
+                          )
+                      ),
+                      Container(
+                          width: 200,
+                          margin: const EdgeInsets.only(top: 5,bottom: 5,left: 10,right: 10),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Text(event.toString()
+                                  .split("{")[1]
+                                  .split("}")[0]
+                                  .split(",")[4]
+                                  .split(":")[1].trim().split(" ")[0]
+                                //.split(" ")[0]
+                                ,
+                                style: TextStyle(
+                                    fontSize: 16
+                                ),
+                              ),
+                              Text(event.toString()
+                                  .split("{")[1]
+                                  .split("}")[0]
+                                  .split(",")[3]
+                                  .split(":")[1],
+                                style: TextStyle(
+                                    color: hexToColor("#8A9199"),
+                                    fontSize: 14
+                                ),
+                              )
+                            ],
+                          )
+                      ),
+                      Text("\$"+event.toString()
+                          .split("{")[1]
+                          .split("}")[0]
+                          .split(",")[2]
+                          .split(":")[1],
+                        style: TextStyle(
+                            fontSize: 16
+                        ),
+                      )
+                    ],
+                  ),
+                )
                 )
               ),
             ],
