@@ -1,16 +1,37 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_module/CalendarPage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class FourPage extends StatefulWidget {
-
+  SharedPreferences prefs;
   @override
-  State createState()=>_FourPageState();
+  State createState()=>_FourPageState(prefs);
 }
 
 
 class _FourPageState extends State<FourPage>{
-  _FourPageState() ;
+ // SharedPreferences prefs;
+  _FourPageState(prefs);
+  TextEditingController  _controller_job;
+  TextEditingController  _controller_perdiem;
+  TextEditingController  _controller_hourly;
+  TextEditingController  _controller_manual;
 
+
+  @override
+  void initState() {
+   initPrefs();
+   _controller_job = TextEditingController();
+   _controller_perdiem=TextEditingController();
+   _controller_hourly=TextEditingController();
+   _controller_manual=TextEditingController();
+  }
+  initPrefs() async{
+  //  prefs = await SharedPreferences.getInstance();
+
+  }
     @override
     Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +59,7 @@ class _FourPageState extends State<FourPage>{
 
                   padding: const EdgeInsets.only(left: 20,right: 20),
                   child:new TextField(
+                    controller: _controller_job,
                     style: TextStyle(fontSize: 16),
                     decoration: new InputDecoration(
                         hintText: "Job Name"
@@ -188,6 +210,15 @@ class _FourPageState extends State<FourPage>{
                                 fontSize: 20.0,
                                 color: hexToColor("#FF7052"))),
                         onPressed: (){
+                         // setState(
+                          //        () {
+                          //  prefs.setString("job", json.encode(_controller_job.text));
+                          //  prefs.setString("perdiem", json.encode(_controller_job.text));
+                          //  prefs.setString("hourly", json.encode(_controller_job.text));
+                          // prefs.setString("manual", json.encode(_controller_job.text));
+                         // });
+//                          Navigator.of(context).push(new MaterialPageRoute(builder:
+//                              (BuildContext context) => CalendarPage.prefs(prefs)));
 
                           Navigator.of(context).push(new MaterialPageRoute(builder:
                               (BuildContext context) => CalendarPage()));

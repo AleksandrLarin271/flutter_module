@@ -26,6 +26,7 @@ class _ResultPageState extends State<ResultPage> {
 
   }
 
+
   Map<DateTime,dynamic> decodeMap(Map<String,dynamic> map) {
     Map<DateTime,dynamic> newMap = {};
     map.forEach((key,value) {
