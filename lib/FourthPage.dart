@@ -12,7 +12,7 @@ class FourPage extends StatefulWidget {
 
 
 class _FourPageState extends State<FourPage>{
- // SharedPreferences prefs;
+ SharedPreferences prefs;
   _FourPageState(prefs);
   TextEditingController  _controller_job;
   TextEditingController  _controller_perdiem;
@@ -29,7 +29,7 @@ class _FourPageState extends State<FourPage>{
    _controller_manual=TextEditingController();
   }
   initPrefs() async{
-  //  prefs = await SharedPreferences.getInstance();
+    prefs = await SharedPreferences.getInstance();
 
   }
     @override
@@ -210,16 +210,13 @@ class _FourPageState extends State<FourPage>{
                                 fontSize: 20.0,
                                 color: hexToColor("#FF7052"))),
                         onPressed: (){
-                         // setState(
-                          //        () {
-                          //  prefs.setString("job", json.encode(_controller_job.text));
-                          //  prefs.setString("perdiem", json.encode(_controller_job.text));
-                          //  prefs.setString("hourly", json.encode(_controller_job.text));
-                          // prefs.setString("manual", json.encode(_controller_job.text));
-                         // });
-//                          Navigator.of(context).push(new MaterialPageRoute(builder:
-//                              (BuildContext context) => CalendarPage.prefs(prefs)));
-
+                         setState(
+                                  () {
+                           prefs.setString("job", json.encode(_controller_job.text));
+                           prefs.setString("perdiem", json.encode(_controller_job.text));
+                           prefs.setString("hourly", json.encode(_controller_job.text));
+                           prefs.setString("manual", json.encode(_controller_job.text));
+                         });
                           Navigator.of(context).push(new MaterialPageRoute(builder:
                               (BuildContext context) => CalendarPage()));
                         },
