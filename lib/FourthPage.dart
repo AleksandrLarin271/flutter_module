@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_module/CalendarPage.dart';
+import 'package:flutter_module/CalendarPageHourly.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FourPage extends StatefulWidget {
@@ -28,15 +28,16 @@ class _FourPageState extends State<FourPage>{
    _controller_hourly=TextEditingController();
    _controller_manual=TextEditingController();
   }
-  initPrefs() async{
-    prefs = await SharedPreferences.getInstance();
-
-  }
+ initPrefs() async{
+   prefs = await SharedPreferences.getInstance();
+   print(prefs.getString("events"));
+ }
     @override
     Widget build(BuildContext context) {
     return Scaffold(
 
-        body: new Column(
+        body: SingleChildScrollView(
+            child: new Column(
 
             children:<Widget>[
 
@@ -109,6 +110,9 @@ class _FourPageState extends State<FourPage>{
                         padding: const EdgeInsets.only(right: 20),
                         width: 150.0,
                         child: TextField(
+                          controller: _controller_perdiem,
+                          keyboardType: TextInputType.number,
+
                           decoration: const InputDecoration(hintText: "50 \$"),
 
                         )),
@@ -148,6 +152,9 @@ class _FourPageState extends State<FourPage>{
                         padding: const EdgeInsets.only(right: 20),
                         width: 150.0,
                         child: TextField(
+                          keyboardType: TextInputType.number,
+
+                          controller: _controller_hourly,
                           decoration: const InputDecoration(hintText: "5 \$"),
 
                         )),
@@ -189,6 +196,9 @@ class _FourPageState extends State<FourPage>{
                         padding: const EdgeInsets.only(right: 20),
                         width: 150.0,
                         child: TextField(
+                          controller: _controller_manual,
+                          keyboardType: TextInputType.number,
+
                           decoration: const InputDecoration(hintText: "0"),
 
                         )),
@@ -210,15 +220,19 @@ class _FourPageState extends State<FourPage>{
                                 fontSize: 20.0,
                                 color: hexToColor("#FF7052"))),
                         onPressed: (){
-                         setState(
-                                  () {
-                           prefs.setString("job", json.encode(_controller_job.text));
-                           prefs.setString("perdiem", json.encode(_controller_job.text));
-                           prefs.setString("hourly", json.encode(_controller_job.text));
-                           prefs.setString("manual", json.encode(_controller_job.text));
-                         });
+                         setState(() {
+                                      print("312");
+                                        prefs.setString("job", json.encode(
+                                            _controller_job.text));
+                                        prefs.setString("perdiem",
+                                            _controller_perdiem.text);
+                                        prefs.setString("hourly",
+                                            _controller_hourly.text);
+                                        prefs.setString("manual",
+                                            _controller_manual.text);
+                             });
                           Navigator.of(context).push(new MaterialPageRoute(builder:
-                              (BuildContext context) => CalendarPage()));
+                              (BuildContext context) => CalendarPageHourly()));
                         },
                       ),
                     ),
@@ -228,7 +242,7 @@ class _FourPageState extends State<FourPage>{
 
         )
 
-
+        )
     );
   }
 
