@@ -1,4 +1,4 @@
-#Sun Jan 26 20:11:18 EET 2020
+#Tue Jan 28 11:28:35 EET 2020
 base.0=/home/kolia/AndroidStudioProjects/flutter_ap/build/host/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

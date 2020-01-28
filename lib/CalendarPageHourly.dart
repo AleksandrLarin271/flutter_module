@@ -14,7 +14,6 @@ import 'ResultPageHourly.dart';
 class CalendarPageHourly extends StatefulWidget{
    Map<DateTime,List<dynamic>> events_map;
    SharedPreferences prefs;
-
    CalendarPageHourly();
    CalendarPageHourly.events(this.events_map,this.prefs);
    CalendarPageHourly.prefs(this.prefs);
@@ -27,19 +26,19 @@ class _CalendarPageHourlyState extends State<CalendarPageHourly>
   SharedPreferences prefs;
   Map<DateTime,List<dynamic>> events_map=null;
    SharedPreferences prefs_calculator=null;
-   _CalendarPageHourlyState.prefs(this.prefs_calculator);
+  _CalendarPageHourlyState.prefs(this.prefs_calculator);
    _CalendarPageHourlyState.events(this.events_map,this.prefs_calculator);
   _CalendarPageHourlyState();
   CalendarController _controller;
     Map<DateTime,List<dynamic>> _events;
     List<dynamic> _selectedEvents;
 
-
     @override
     void initState(){
       // TODO: implement initState
       super.initState();
       _controller = CalendarController();
+
       if(events_map!=null)
         {
           _events=events_map;
@@ -208,9 +207,11 @@ class _CalendarPageHourlyState extends State<CalendarPageHourly>
                   )
               ),
               TableCalendar(
+
                 events: _events,
                 initialCalendarFormat: CalendarFormat.month,
                 calendarStyle: CalendarStyle(
+
                     todayColor: Colors.orange,
                     selectedColor: Theme.of(context).primaryColor,
                     todayStyle: TextStyle(
@@ -234,6 +235,50 @@ class _CalendarPageHourlyState extends State<CalendarPageHourly>
                 },
                 startingDayOfWeek: StartingDayOfWeek.monday,
                 builders: CalendarBuilders(
+                    singleMarkerBuilder:  (context, date, events) {
+                      print("!!!!!!!!!!!!");
+                      print(events);
+                      return Container(
+                          width: 40,
+                          height: 40,
+
+                          child: Column(
+                          children: <Widget>[
+                            Container(
+                              width: 30,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    color: Colors.blueGrey
+                                ),
+                                child: Center(
+                                    child: Text(events.split("{")[1].split("}")[0]
+                                        .split(",")[0].split(":")[1] ,
+                                        style: TextStyle(fontSize: 10))
+                                )
+                            ),
+                            Container(
+                            width: 40,
+                              margin: const EdgeInsets.only(top :15),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Colors.deepOrangeAccent
+                              ),
+                              child: Center(
+                                child: Text(events.split("{")[1].split("}")[0]
+                                    .split(",")[2].split(":")[1] + "\$",
+                                  style: TextStyle(fontSize: 10))
+                              )
+                            ),
+
+                          ]
+
+                          )
+                      );
+                    },
+
+
+
+
                   selectedDayBuilder: (context, date, events) => Container(
                       margin: const EdgeInsets.all(4.0),
                       alignment: Alignment.center,
@@ -256,6 +301,7 @@ class _CalendarPageHourlyState extends State<CalendarPageHourly>
                       )),
                 ),
                 calendarController: _controller,
+
               ),
               ..._selectedEvents.map((event) => ListTile(
                 title: Container(

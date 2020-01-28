@@ -211,6 +211,7 @@ class _CalendarPagePerdiemState extends State<CalendarPagePerdiem>
                   )
               ),
               TableCalendar(
+
                 events: _events,
                 initialCalendarFormat: CalendarFormat.month,
                 calendarStyle: CalendarStyle(
@@ -237,6 +238,46 @@ class _CalendarPagePerdiemState extends State<CalendarPagePerdiem>
                 },
                 startingDayOfWeek: StartingDayOfWeek.monday,
                 builders: CalendarBuilders(
+                  singleMarkerBuilder:  (context, date, events) {
+                    print("!!!!!!!!!!!!");
+                    print(events);
+                    return Container(
+                        width: 40,
+                        height: 40,
+
+                        child: Column(
+                            children: <Widget>[
+                              Container(
+                                  width: 30,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: Colors.blueGrey
+                                  ),
+                                  child: Center(
+                                      child: Text(events.split("{")[1].split("}")[0]
+                                          .split(",")[5].split(":")[1] ,
+                                          style: TextStyle(fontSize: 10))
+                                  )
+                              ),
+                              Container(
+                                  width: 40,
+                                  margin: const EdgeInsets.only(top :15),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      color: Colors.deepOrangeAccent
+                                  ),
+                                  child: Center(
+                                      child: Text(events.split("{")[1].split("}")[0]
+                                          .split(",")[2].split(":")[1] + "\$",
+                                          style: TextStyle(fontSize: 10))
+                                  )
+                              ),
+
+                            ]
+
+                        )
+                    );
+                  },
                   selectedDayBuilder: (context, date, events) => Container(
                       margin: const EdgeInsets.all(4.0),
                       alignment: Alignment.center,

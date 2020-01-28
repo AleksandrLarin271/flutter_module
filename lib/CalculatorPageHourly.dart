@@ -7,18 +7,20 @@ import 'package:flutter_module/FourthPage.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:flutter_module/Work.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 
 class CalculatorPageHourly extends StatefulWidget{
   final DateTime selected_day;
   final Map<DateTime,List<dynamic>> events_map;
   SharedPreferences prefs;
-  CalculatorPageHourly(this.selected_day,this.events_map,this.prefs);
+  CalculatorPageHourly(this.selected_day,this.events_map,this.prefs,);
   @override
   State createState()=>_CalculatorPageHourlyState(
       this.selected_day,
       this.events_map,
-      this.prefs);
+      this.prefs,
+      );
 }
 
 class _CalculatorPageHourlyState extends State<CalculatorPageHourly>
@@ -63,6 +65,9 @@ class _CalculatorPageHourlyState extends State<CalculatorPageHourly>
       }
     });
   }
+
+
+
 
 
   @override
@@ -289,6 +294,31 @@ class _CalculatorPageHourlyState extends State<CalculatorPageHourly>
                         events_map[selected_day]=[work.toString()];
                         prefs.setString("events_hourly", json.encode((encodeMap(events_map))));
                         print(prefs.getString("job"));
+                        List<dynamic> day=[
+                          new Center(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                    Container(
+                                      child: Text(
+                                          selected_day.day.toString()
+                                      )
+                                    ),
+                                    Container(
+                                      child: Text(
+                                          _controller_hours.text
+                                      )
+                                    ),
+                                  Container(
+                                    child: Text(_controller_earning.text
+                                    )
+                                  )
+                                ],
+                            )
+                          )
+                        ];
+
+//                        builder.dayBuilder(context,selected_day,day);
                         Navigator.of(context).
                         push(
                             new MaterialPageRoute(
